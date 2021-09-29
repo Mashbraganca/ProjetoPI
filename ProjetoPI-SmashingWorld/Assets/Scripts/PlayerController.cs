@@ -58,21 +58,30 @@ public class PlayerController : MonoBehaviour
     private UnityEvent<int> deathEvent;
     private UnityEvent pauseEvent;
 
-
-
-
+    //Jump logics
     [SerializeField]
-    private float jumpforce = 10.0f;
+    private float jump1force = 10.0f;
+    [SerializeField]
+    private float jump2force = 3.0f;
+    private bool jumped = false;
+    private bool grounded = true;
+    private int jumpCount = 0;
+    private int jumpMax = 2;
+
+
     private Vector2 velocidadeFinal;
     private PlayerControls playerInputActions;
-    private bool jumped = false;
+
     private int front = -1;
     [SerializeField]
-    private bool grounded = true;
+
     private Vector2 movementInput = Vector2.zero;
 
     [SerializeField]
     LayerMask hitlayers;
+
+    [SerializeField]
+    public GameObject SpawnPoint;
 
     // Start is called before the first frame update
     void Awake()
@@ -164,7 +173,25 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        jumped = context.action.triggered;
+         jumped = context.action.triggered;
+
+        if (jumped && grounded &&jumpCount < jumpMax)
+        {
+            if(jumpCount == 0)
+            {
+                print(jump1force);
+                jumpCount += 1;
+                rb.AddForce(Vector2.up * jump1force, ForceMode2D.Impulse);
+            }
+            else
+            {
+                print(jump2force);
+                jumpCount += 1;
+                grounded = false;
+                rb.AddForce(Vector2.up * jump2force, ForceMode2D.Impulse);
+            }
+
+        }
     }
 
     public void PauseGame(InputAction.CallbackContext context)
@@ -208,10 +235,16 @@ public class PlayerController : MonoBehaviour
 
         
         
-        if (jumped && grounded)
+
+
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -15f)
         {
-            grounded = false;
-            rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
+            transform.position = SpawnPoint.transform.position;
+            TakeHit(falldamage);
         }
 
     }
@@ -221,6 +254,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Floor"))
         {
             grounded = true;
+            jumpCount = 0;
         }
 
        else if(collision.gameObject.CompareTag("Platform"))
@@ -228,6 +262,7 @@ public class PlayerController : MonoBehaviour
             if(collision.GetContact(0).normal.y > 0)
             {
                 grounded = true;
+                jumpCount = 0;
             }
             
         }
@@ -239,12 +274,6 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position + hit1offset, hit1range);
         Gizmos.DrawWireSphere(transform.position + hit2offset, hit2range);
-    }
-
-    private void OnBecameInvisible()
-    {
-        transform.position = GameObject.FindGameObjectWithTag("RespawnPoint").transform.position;
-        TakeHit(falldamage);
     }
 
     public void registerDeathEvent(UnityAction<int> action)
