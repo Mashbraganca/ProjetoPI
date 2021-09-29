@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - P1HUD
+  - P2HUD
+  - Platform
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX
@@ -12,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Immunity
+  - Player
   - 
   - 
   - 
