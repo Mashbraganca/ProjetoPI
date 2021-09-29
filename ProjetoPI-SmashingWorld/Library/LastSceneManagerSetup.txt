@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MainMenu.unity
+=======
+- path: Assets/Scenes/Arena.unity
+>>>>>>> Mapa
   isLoaded: 1
   isActive: 1
   isSubScene: 0

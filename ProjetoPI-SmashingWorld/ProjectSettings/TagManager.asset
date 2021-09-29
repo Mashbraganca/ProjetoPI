@@ -46,3 +46,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: sky
+    uniqueID: 1066935899
+    locked: 0
+  - name: Forest01
+    uniqueID: 1220008125
+    locked: 0
+  - name: Forest02
+    uniqueID: 211654843
+    locked: 0
+  - name: Forest03
+    uniqueID: 3168369083
+    locked: 0
+  - name: trees2 back
+    uniqueID: 1690305757
+    locked: 0
+  - name: trees1 back
+    uniqueID: 3459913441
+    locked: 0
+  - name: Props Back
+    uniqueID: 4051857741
+    locked: 0
+  - name: Back
+    uniqueID: 801523701
+    locked: 0
+  - name: Floor
+    uniqueID: 2017000981
+    locked: 0
+  - name: Front
+    uniqueID: 599458987
+    locked: 0
+  - name: props Front
+    uniqueID: 1070494805
+    locked: 0
