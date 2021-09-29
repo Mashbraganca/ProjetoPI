@@ -23,6 +23,10 @@ public class PlayerManager : MonoBehaviour
     GameObject GameOverMenu;
     [SerializeField]
     GameObject GameOverMenuText;
+    [SerializeField]
+    GameObject SpawnPointp1, SpawnPointp2;
+    [SerializeField]
+    CameraAdjust cameraAdjust;
 
     bool paused = false;
 
@@ -67,31 +71,19 @@ public class PlayerManager : MonoBehaviour
         if (dualcontroller)
         {
             p1 = manager.JoinPlayer(0, 0, "Controller").gameObject;
-            controllerp1 = p1.GetComponent<PlayerController>();
-            controllerp1.HUD = GameObject.FindGameObjectWithTag("P1HUD").GetComponent<HUDBars>();
-            controllerp1.playerid = 1;
-            controllerp1.registerDeathEvent(FinishGame);
-            controllerp1.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
-
-
+            SetupP1();
         }
         else
         {
             p1 = manager.JoinPlayer(0, 0, "Keyboard").gameObject;
-            controllerp1 = p1.GetComponent<PlayerController>();
-            controllerp1.HUD = GameObject.FindGameObjectWithTag("P1HUD").GetComponent<HUDBars>();
-            controllerp1.playerid = 1;
-            controllerp1.registerDeathEvent(FinishGame);
-            controllerp1.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+            SetupP1();
         }
 
         //Spawning P2 - always joystick
         p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
-        controllerp2 = p2.GetComponent<PlayerController>();
-        controllerp2.HUD = GameObject.FindGameObjectWithTag("P2HUD").GetComponent<HUDBars>();
-        controllerp2.playerid = 2;
-        controllerp2.registerDeathEvent(FinishGame);
-        controllerp2.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+        SetupP2();
+
+        cameraAdjust.SetupCamera();
     }
 
 
@@ -138,6 +130,30 @@ public class PlayerManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    private void SetupP1()
+    {
+        controllerp1 = p1.GetComponent<PlayerController>();
+        controllerp1.HUD = GameObject.FindGameObjectWithTag("P1HUD").GetComponent<HUDBars>();
+        controllerp1.playerid = 1;
+        controllerp1.registerDeathEvent(FinishGame);
+        controllerp1.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+        controllerp1.SpawnPoint = SpawnPointp1;
+        p1.transform.position = SpawnPointp1.transform.position;
+        p1.tag = "Player1";
+    }
+
+    private void SetupP2()
+    {
+        controllerp2 = p2.GetComponent<PlayerController>();
+        controllerp2.HUD = GameObject.FindGameObjectWithTag("P2HUD").GetComponent<HUDBars>();
+        controllerp2.playerid = 2;
+        controllerp2.registerDeathEvent(FinishGame);
+        controllerp2.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+        controllerp2.SpawnPoint = SpawnPointp2;
+        p2.transform.position = SpawnPointp2.transform.position;
+        p2.tag = "Player2";
     }
 
 }

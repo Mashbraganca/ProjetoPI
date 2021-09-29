@@ -9,6 +9,8 @@ TagManager:
   - P2HUD
   - Platform
   - RespawnPoint
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
@@ -78,4 +80,7 @@ TagManager:
     locked: 0
   - name: props Front
     uniqueID: 1070494805
+    locked: 0
+  - name: UILayer
+    uniqueID: 3329267975
     locked: 0
