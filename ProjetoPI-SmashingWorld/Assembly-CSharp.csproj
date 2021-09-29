@@ -55,11 +55,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\HUDBars.cs" />
+    <Compile Include="Assets\Scripts\Managers\Menus.cs" />
     <Compile Include="Assets\Prefabs\Characters\CharactersData\CharactersData.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\Managers\Scenes.cs" />
-    <Compile Include="Assets\Scripts\Managers\Menus.cs" />
+    <Compile Include="Assets\Scripts\PlayerControls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -307,9 +307,6 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.Utilities.Editor">
-      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.OdinInspector.Editor">
       <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
     </Reference>
@@ -324,6 +321,9 @@
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -751,10 +751,6 @@
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{A0918CC0-0433-06F8-760A-AF6D62E897FD}</Project>
       <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{BBE867F5-E69D-7CC6-9F03-089CD0E1179F}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{FC848EEB-285B-8281-15CF-2488D576E394}</Project>
