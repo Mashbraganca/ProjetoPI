@@ -228,7 +228,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: d9e5ac82a6ea930408ca1e88a2ef18d8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -251,8 +251,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 200
   dashspeed: 400
-  jump1force: 10
-  jump2force: 5
+  jump1force: 13
+  jump2force: 13
   movementInput: {x: 0, y: 0}
   hitlayers:
     serializedVersion: 2

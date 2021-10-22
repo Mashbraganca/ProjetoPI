@@ -196,6 +196,7 @@ public class PlayerController : MonoBehaviour
             {
                 print(jump1force);
                 jumpCount += 1;
+                rb.velocity = new Vector2(rb.velocity.x, 0.0f);
                 rb.AddForce(Vector2.up * jump1force, ForceMode2D.Impulse);
             }
             else
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour
                 print(jump2force);
                 jumpCount += 1;
                 grounded = false;
+                rb.velocity = new Vector2(rb.velocity.x, 0.0f);
                 rb.AddForce(Vector2.up * jump2force, ForceMode2D.Impulse);
             }
 
@@ -240,6 +242,11 @@ public class PlayerController : MonoBehaviour
         {
             velocidadeFinal = movementInput * dashspeed * Time.fixedDeltaTime;
             dashtime -= Time.fixedDeltaTime;
+            if (rb.velocity.y < -0.2)
+            {
+                animator.SetBool("falling", true);
+
+            }
             rb.velocity = new Vector2(velocidadeFinal.x, 0);
         }
         else
@@ -251,6 +258,12 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("speed", movementInput.magnitude);
         print(rb.velocity.y);
         animator.SetFloat("yspeed",rb.velocity.y);
+
+        if(rb.velocity.y < -0.2)
+        {
+            animator.SetBool("falling", true);
+
+        }
 
  
         
@@ -274,6 +287,7 @@ public class PlayerController : MonoBehaviour
         {
             grounded = true;
             animator.SetBool("jump", false);
+            animator.SetBool("falling", false);
             jumpCount = 0;
         }
 
@@ -283,6 +297,7 @@ public class PlayerController : MonoBehaviour
             {
                 grounded = true;
                 animator.SetBool("jump", false);
+                animator.SetBool("falling", false);
                 jumpCount = 0;
             }
             

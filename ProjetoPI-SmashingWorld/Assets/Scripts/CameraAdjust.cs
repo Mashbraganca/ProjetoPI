@@ -22,8 +22,8 @@ public class CameraAdjust : MonoBehaviour
     float camwidth;
 
     //Relativos
-    float minortsize = 5f, maxortsize = 7.5f;
-    float maxX = -4.5f, minX = -18f;
+    float minortsize = 8f, maxortsize =10f;
+    float maxX = -8.5f, minX = -15f;
 
     public void calcScreen(Transform p1, Transform p2)
     {
