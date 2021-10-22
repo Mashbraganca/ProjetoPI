@@ -83,6 +83,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public GameObject SpawnPoint;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -102,6 +105,9 @@ public class PlayerController : MonoBehaviour
         HUD.SetHPMaxValue(maxhp);
         HUD.SetMPMaxValue(maxmp);
         HUD.SetMPValue(mp);
+
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
 
 
@@ -166,9 +172,17 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        if (movementInput.x > 0) front = 1;
-        else if (movementInput.x < 0) front = -1;
-
+        if (movementInput.x > 0)
+        {
+            front = 1;
+            spriteRenderer.flipX = false;
+            
+        }
+        else if (movementInput.x < 0)
+        {
+            front = -1;
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -177,6 +191,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumped && grounded &&jumpCount < jumpMax)
         {
+            animator.SetBool("jump", true);
             if(jumpCount == 0)
             {
                 print(jump1force);
@@ -220,6 +235,7 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.layer = 7;
         }
+        
         if(dashtime > 0)
         {
             velocidadeFinal = movementInput * dashspeed * Time.fixedDeltaTime;
@@ -231,9 +247,12 @@ public class PlayerController : MonoBehaviour
             velocidadeFinal = movementInput * speed * Time.fixedDeltaTime;
             rb.velocity = new Vector2(velocidadeFinal.x, rb.velocity.y);
         }
-        
 
-        
+        animator.SetFloat("speed", movementInput.magnitude);
+        print(rb.velocity.y);
+        animator.SetFloat("yspeed",rb.velocity.y);
+
+ 
         
 
 
@@ -254,6 +273,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Floor"))
         {
             grounded = true;
+            animator.SetBool("jump", false);
             jumpCount = 0;
         }
 
@@ -262,6 +282,7 @@ public class PlayerController : MonoBehaviour
             if(collision.GetContact(0).normal.y > 0)
             {
                 grounded = true;
+                animator.SetBool("jump", false);
                 jumpCount = 0;
             }
             

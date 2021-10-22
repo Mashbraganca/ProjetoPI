@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6391456932003090544}
   - component: {fileID: 6391456932003090546}
   - component: {fileID: 6391456932003090545}
-  - component: {fileID: -4525410831979667419}
+  - component: {fileID: 417483572}
+  - component: {fileID: -9134443276824501222}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 599458987
   m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -6930432791568582698, guid: c35462fa82f071d4e886bf3ae0144e54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,8 +258,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   SpawnPoint: {fileID: 0}
---- !u!58 &-4525410831979667419
-CircleCollider2D:
+--- !u!70 &417483572
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -266,10 +267,29 @@ CircleCollider2D:
   m_GameObject: {fileID: 6391456932003090549}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d9e5ac82a6ea930408ca1e88a2ef18d8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: -0.12227917, y: -0.10557127}
+  m_Size: {x: 1.303091, y: 2.7193727}
+  m_Direction: 0
+--- !u!95 &-9134443276824501222
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391456932003090549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 273229420afebc546bb19b7300018757, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

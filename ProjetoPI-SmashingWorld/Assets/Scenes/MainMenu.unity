@@ -4405,15 +4405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfeb4de4304d91c479733d9b3169393b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultAudioSource: {fileID: 1770110391}
-  uiSFX:
-  - {fileID: 11400000, guid: 0b41f2d9b67b8624abd7c0dba00be493, type: 2}
-  - {fileID: 11400000, guid: fb96be8e4bf7f7c4ca0af520f4e1c951, type: 2}
-  ambientSFX:
-  - {fileID: 11400000, guid: ac43b504a6ef84e46a4f2f819af26c19, type: 2}
-  - {fileID: 11400000, guid: 1e544094da3a9924daa4ae12547d9c88, type: 2}
-  weaponsSFX:
-  - {fileID: 11400000, guid: 5f65b5768b2d08846a3285ce712f293f, type: 2}
 --- !u!4 &1770110394
 Transform:
   m_ObjectHideFlags: 0
@@ -5139,9 +5130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bb1225dfb3318468c73e9a12310b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultAudioSource: {fileID: 2085118694}
-  music:
-  - {fileID: 11400000, guid: 698a060f93ed26e428c6a28544111aac, type: 2}
 --- !u!4 &2085118696
 Transform:
   m_ObjectHideFlags: 0
