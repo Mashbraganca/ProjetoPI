@@ -22,8 +22,12 @@ public class CameraAdjust : MonoBehaviour
     float camwidth;
 
     //Relativos
-    float minortsize = 8f, maxortsize =10f;
-    float maxX = -8.5f, minX = -15f;
+
+    float camleft = -29.0f;
+    float camright = 12.8f;
+
+    float minortsize = 8f;//, maxortsize =11f;
+    //float maxX = -6f, minX = -10f;
 
     public void calcScreen(Transform p1, Transform p2)
     {
@@ -84,16 +88,29 @@ public class CameraAdjust : MonoBehaviour
 
             float new_ortSize = (width / cam.aspect) / 2f;
             if (new_ortSize < minortsize) new_ortSize = minortsize;
-            else if (new_ortSize > maxortsize) new_ortSize = maxortsize;
+            //else if (new_ortSize > maxortsize) new_ortSize = maxortsize;
+
+            float oldcamsize = cam.orthographicSize;
+            Vector3 oldpos = transform.position;
 
             cam.orthographicSize = new_ortSize;
+            transform.position = pos;
+
+            if (Camera.main.ViewportToWorldPoint(new Vector3(0f, 0f, 0f)).x < camleft ||
+               Camera.main.ViewportToWorldPoint(new Vector3(1f, 0f, 0f)).x > camright)
+            {
+                cam.orthographicSize = oldcamsize;
+                transform.position = oldpos;
+            }
+
+            
 
             //if (pos.y > maxy) pos.y = maxy;
 
-            if (pos.x < minX) pos.x = minX;
-            else if (pos.x > maxX) pos.x = maxX;
+            //if (pos.x < minX) pos.x = minX;
+            //else if (pos.x > maxX) pos.x = maxX;
 
-            transform.position = pos;
+            
         }
 
     }
