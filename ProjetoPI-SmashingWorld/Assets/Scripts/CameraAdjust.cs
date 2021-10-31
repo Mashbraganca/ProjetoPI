@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraAdjust : MonoBehaviour
 {
-    float margin = 1.5f; // space between screen border and nearest fighter
-    float marginY = 1.5f; // space between screen border and nearest fighter
+    float margin = 5f; // space between screen border and nearest fighter
+    float marginY = 5f; // space between screen border and nearest fighter
 
     private float z0; // coord z of the fighters plane
     private float zCam; // camera distance to the fighters plane

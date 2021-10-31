@@ -67,6 +67,10 @@ public class PlayerController : MonoBehaviour
     private bool grounded = true;
     private int jumpCount = 0;
     private int jumpMax = 2;
+    [SerializeField]
+    PhysicsMaterial2D basic;
+    [SerializeField]
+    PhysicsMaterial2D nofriction;
 
 
     private Vector2 velocidadeFinal;
@@ -83,8 +87,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public GameObject SpawnPoint;
 
+    bool inCollisionWithPlayer;
+
+    private CapsuleCollider2D capsuleCollider;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -108,9 +116,10 @@ public class PlayerController : MonoBehaviour
 
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
 
 
-
+        inCollisionWithPlayer = false;
 
     }
 
@@ -171,7 +180,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+            movementInput = context.ReadValue<Vector2>();
         if (movementInput.x > 0)
         {
             front = 1;
@@ -187,10 +196,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-         jumped = context.action.triggered;
+
+
+        jumped = context.action.triggered;
 
         if (jumped && grounded &&jumpCount < jumpMax)
         {
+            //rb.sharedMaterial = nofriction;
+           // capsuleCollider.sharedMaterial = nofriction;
             animator.SetBool("jump", true);
             if(jumpCount == 0)
             {
@@ -221,6 +234,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeHit(float damage)
     {
+        animator.Play("hit");
         hp -= damage;
         HUD.SetHPValue(hp);
         if (hp <= 0) Death();
@@ -240,7 +254,7 @@ public class PlayerController : MonoBehaviour
         
         if(dashtime > 0)
         {
-            velocidadeFinal = movementInput * dashspeed * Time.fixedDeltaTime;
+            velocidadeFinal = new Vector2(front,0) * dashspeed * Time.fixedDeltaTime;
             dashtime -= Time.fixedDeltaTime;
             if (rb.velocity.y < -0.2)
             {
@@ -251,25 +265,38 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            velocidadeFinal = movementInput * speed * Time.fixedDeltaTime;
-            rb.velocity = new Vector2(velocidadeFinal.x, rb.velocity.y);
+            if (!inCollisionWithPlayer)
+            {
+                velocidadeFinal = movementInput * speed * Time.fixedDeltaTime;
+                rb.velocity = new Vector2(velocidadeFinal.x, rb.velocity.y);
+            }
+            else
+            {
+                rb.AddForce(new Vector2(0, -1f) * 1, ForceMode2D.Impulse);
+            }
+
+
         }
 
-        animator.SetFloat("speed", movementInput.magnitude);
-        print(rb.velocity.y);
+        animator.SetFloat("speed", Mathf.Abs(movementInput.x));
         animator.SetFloat("yspeed",rb.velocity.y);
 
         if(rb.velocity.y < -0.2)
         {
             animator.SetBool("falling", true);
+            
 
         }
 
- 
-        
+
+
+
+
 
 
     }
+
+
 
     private void Update()
     {
@@ -281,9 +308,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             animator.SetBool("jump", false);
@@ -295,16 +324,55 @@ public class PlayerController : MonoBehaviour
         {
             if(collision.GetContact(0).normal.y > 0)
             {
+                rb.sharedMaterial = basic;
+                capsuleCollider.sharedMaterial = basic;
+                grounded = true;            
+                animator.SetBool("jump", false);
+                animator.SetBool("falling", false);
+                jumpCount = 0;
+                
+            }
+
+            
+        }
+
+        else if(collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
+        {
+            if (collision.GetContact(0).normal.y > 0)
+            {
+                // rb.sharedMaterial = basic;
+                // capsuleCollider.sharedMaterial = basic;
+                inCollisionWithPlayer = true;
                 grounded = true;
                 animator.SetBool("jump", false);
                 animator.SetBool("falling", false);
                 jumpCount = 0;
+
             }
-            
         }
-        
+       
 
     }
+
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            rb.sharedMaterial = nofriction;
+            capsuleCollider.sharedMaterial = nofriction;
+        }
+
+        else if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
+        {
+
+                inCollisionWithPlayer = false;
+        }
+
+
+        }
+
 
     private void OnDrawGizmosSelected()
     {

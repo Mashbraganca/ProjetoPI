@@ -232,7 +232,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: d9e5ac82a6ea930408ca1e88a2ef18d8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6391456932003090545
 MonoBehaviour:
@@ -251,8 +251,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 400
   dashspeed: 800
-  jump1force: 15
+  jump1force: 12
   jump2force: 15
+  basic: {fileID: 6200000, guid: d9e5ac82a6ea930408ca1e88a2ef18d8, type: 2}
+  nofriction: {fileID: 6200000, guid: b222e8c4da093214bb2e575d747766e0, type: 2}
   movementInput: {x: 0, y: 0}
   hitlayers:
     serializedVersion: 2
