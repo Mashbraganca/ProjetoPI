@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 05d3a8407c1e25d45ba6a276af9ca892
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6471064763012014546
+    second: UI Smashing_fix_0
+  - first:
+      213: 4590228162177267768
+    second: UI Smashing_fix_1
+  - first:
+      213: -5950987040625884385
+    second: UI Smashing_fix_2
+  - first:
+      213: -1584326379890328070
+    second: UI Smashing_fix_3
+  - first:
+      213: 1085026546188712128
+    second: UI Smashing_fix_4
+  - first:
+      213: -8263559166574617498
+    second: UI Smashing_fix_5
+  - first:
+      213: -6593436217882011314
+    second: UI Smashing_fix_6
+  - first:
+      213: -6200407350747786329
+    second: UI Smashing_fix_7
+  - first:
+      213: -6653376191837336594
+    second: UI Smashing_fix_8
+  - first:
+      213: -3895850834198658362
+    second: UI Smashing_fix_9
+  - first:
+      213: -1970118983062633650
+    second: UI Smashing_fix_10
+  - first:
+      213: 3636766161289585651
+    second: UI Smashing_fix_11
+  - first:
+      213: -9150251099858400908
+    second: UI Smashing_fix_12
+  - first:
+      213: -9037895749839976201
+    second: UI Smashing_fix_13
+  - first:
+      213: 5767657239807523306
+    second: UI Smashing_fix_14
+  - first:
+      213: -1810430529023398019
+    second: UI Smashing_fix_15
+  - first:
+      213: 7444934944253201838
+    second: UI Smashing_fix_16
+  - first:
+      213: -8603753090715420740
+    second: UI Smashing_fix_17
+  - first:
+      213: 9081908922731278115
+    second: UI Smashing_fix_18
+  - first:
+      213: -2346459704894871353
+    second: UI Smashing_fix_19
+  - first:
+      213: -4985520541133707469
+    second: UI Smashing_fix_20
+  - first:
+      213: -1670328505838936487
+    second: UI Smashing_fix_21
+  - first:
+      213: 4229024178312527444
+    second: UI Smashing_fix_22
+  - first:
+      213: -1832546784270658219
+    second: UI Smashing_fix_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI Smashing_fix_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 446
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e1f1a12e82236a0800000000000000
+      internalID: -6471064763012014546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 451
+        width: 101
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838f1948134c3bf30800000000000000
+      internalID: 4590228162177267768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_2
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 408
+        width: 78
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f138a84f0d8d96da0800000000000000
+      internalID: -5950987040625884385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 437
+        width: 77
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd3b563d87530ae0800000000000000
+      internalID: -1584326379890328070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_4
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 436
+        width: 101
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8727125e9ce0f00800000000000000
+      internalID: 1085026546188712128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 407
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c95ef58b0f15d80800000000000000
+      internalID: -8263559166574617498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 426
+        width: 77
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4992ff71b86f74a0800000000000000
+      internalID: -6593436217882011314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 413
+        width: 111
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a315fb9d5ab3f9a0800000000000000
+      internalID: -6200407350747786329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_8
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 411
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb8e78ca957aa3a0800000000000000
+      internalID: -6653376191837336594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 408
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c20ea1be482fe9c0800000000000000
+      internalID: -3895850834198658362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_10
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 366
+        width: 153
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e434c49193bb8a4e0800000000000000
+      internalID: -1970118983062633650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 364
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3a3d62e83687230800000000000000
+      internalID: 3636766161289585651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_12
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 357
+        width: 97
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4790053da17c30180800000000000000
+      internalID: -9150251099858400908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 294
+        width: 137
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f886c943b1f29280800000000000000
+      internalID: -9037895749839976201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 255
+        width: 102
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9ffe483b5da0050800000000000000
+      internalID: 5767657239807523306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_15
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 227
+        width: 69
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fa903a60f00e6e0800000000000000
+      internalID: -1810430529023398019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_16
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 231
+        width: 41
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadca1803e8b15760800000000000000
+      internalID: 7444934944253201838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_17
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 154
+        width: 49
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7fcbc0624599880800000000000000
+      internalID: -8603753090715420740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_18
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 193
+        width: 73
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f29d51c0c690e70800000000000000
+      internalID: 9081908922731278115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 162
+        width: 39
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c829f99453bf6fd0800000000000000
+      internalID: -2346459704894871353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_20
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 160
+        width: 39
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337ef457b7fdfcab0800000000000000
+      internalID: -4985520541133707469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 120
+        width: 124
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ed24fd21dc1d8e0800000000000000
+      internalID: -1670328505838936487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 38
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e3bd6751380ba30800000000000000
+      internalID: 4229024178312527444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Smashing_fix_23
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 48
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5555341b86c7196e0800000000000000
+      internalID: -1832546784270658219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
