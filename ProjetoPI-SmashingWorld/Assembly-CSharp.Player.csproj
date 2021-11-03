@@ -59,6 +59,7 @@
     <Compile Include="Assets\Prefabs\Characters\CharactersData\CharactersData.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Scenes.cs" />
+    <Compile Include="Assets\Scripts\Managers\Prefs.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\CameraAdjust.cs" />
   </ItemGroup>
