@@ -27,6 +27,8 @@ public class PlayerManager : MonoBehaviour
     GameObject SpawnPointp1, SpawnPointp2;
     [SerializeField]
     CameraAdjust cameraAdjust;
+    [SerializeField]
+    AudioClip battlemusic;
 
     bool paused = false;
 
@@ -40,6 +42,9 @@ public class PlayerManager : MonoBehaviour
     {
         //TODO: Separar prefabs de p1 e p2 e alterar antes de chamar JoinPlayer()
         manager = GetComponent<PlayerInputManager>();
+        GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().clip = battlemusic;
+        GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().Play();
+
     }
 
 

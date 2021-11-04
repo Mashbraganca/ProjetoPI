@@ -11,6 +11,8 @@ TagManager:
   - RespawnPoint
   - Player1
   - Player2
+  - SFXManager
+  - MusicManager
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Immunity
   - Player
   - Platform Pass
-  - 
-  - 
+  - Platform
+  - ImmunityPlatformPass
   - 
   - 
   - 

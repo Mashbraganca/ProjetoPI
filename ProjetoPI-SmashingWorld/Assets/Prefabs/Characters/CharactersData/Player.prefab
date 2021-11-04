@@ -259,6 +259,9 @@ MonoBehaviour:
   hitlayers:
     serializedVersion: 2
     m_Bits: 128
+  platformLayers:
+    serializedVersion: 2
+    m_Bits: 512
   SpawnPoint: {fileID: 0}
 --- !u!70 &417483572
 CapsuleCollider2D:

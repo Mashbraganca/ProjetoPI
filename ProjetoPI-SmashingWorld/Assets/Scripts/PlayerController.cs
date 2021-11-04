@@ -37,11 +37,11 @@ public class PlayerController : MonoBehaviour
 
     //HitsFrequency
     private float hitreload = 0;
-    private float hitfrequency = 4;
+    private float hitfrequency = 2;
 
     //Hit1 logics
     private Vector3 hit1offset = new Vector3(1, 0, 0);
-    private float hit1range = 0.5f;
+    private float hit1range = 1f;
     private float hit1damage = 5;
     private float hit1MPregen = 10;
 
@@ -83,6 +83,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     LayerMask hitlayers;
+
+    [SerializeField]
+    LayerMask platformLayers;
 
     [SerializeField]
     public GameObject SpawnPoint;
@@ -128,21 +131,28 @@ public class PlayerController : MonoBehaviour
        if(context.performed) 
         if (Time.time >= hitreload)
         {
+            animator.Play("weakhit");
+            
             hitreload = Time.time + 1f / hitfrequency;
 
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit1offset, hit1range, hitlayers);
-            foreach (Collider2D hit in hitEnemies)
-            {
-                if(hit.gameObject != this.gameObject)
-                {
-                    hit.gameObject.GetComponent<PlayerController>().TakeHit(hit1damage);
-                    mp += hit1MPregen;
-                    if (mp > maxmp) mp = maxmp;
-                    HUD.SetMPValue(mp);
-                }
-            }
+
         }
 
+    }
+
+    public void ApplyDamageHit1()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit1offset, hit1range, hitlayers);
+        foreach (Collider2D hit in hitEnemies)
+        {
+            if (hit.gameObject != this.gameObject)
+            {
+                hit.gameObject.GetComponent<PlayerController>().TakeHit(hit1damage);
+                mp += hit1MPregen;
+                if (mp > maxmp) mp = maxmp;
+                HUD.SetMPValue(mp);
+            }
+        }
     }
 
     public void OnHit2(InputAction.CallbackContext context)
@@ -151,21 +161,24 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
             if (Time.time >= hitreload && mp >= hit2MPcost)
             {
+                animator.Play("stronghit");
                 hitreload = Time.time + 1f / hitfrequency;
                 mp -= hit2MPcost;
                 HUD.SetMPValue(mp);
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit2offset, hit2range, hitlayers);
-                foreach (Collider2D hit in hitEnemies)
-                {
-                    if (hit.gameObject != this.gameObject)
-                    {
-                        hit.gameObject.GetComponent<PlayerController>().TakeHit(hit2damage);
-                    }
-                }
+
             }
+    }
 
-
-
+    public void ApplyDamageHit2()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit2offset, hit2range, hitlayers);
+        foreach (Collider2D hit in hitEnemies)
+        {
+            if (hit.gameObject != this.gameObject)
+            {
+                hit.gameObject.GetComponent<PlayerController>().TakeHit(hit2damage);
+            }
+        }
     }
 
     public void OnDash(InputAction.CallbackContext context)
@@ -173,8 +186,17 @@ public class PlayerController : MonoBehaviour
         if (dashtime <= 0 && Time.time >= dashreload)
         {
             dashtime = dashduration;
+            animator.SetBool("dashing", true);
             dashreload = Time.time + 1f / dashfrequency; 
-            gameObject.layer = 6;
+            if(gameObject.layer == 7)
+            {
+                gameObject.layer = 6;
+            }
+            else if(gameObject.layer == 8)
+            {
+                gameObject.layer = 10;
+            }
+            
 
         }
     }
@@ -202,8 +224,9 @@ public class PlayerController : MonoBehaviour
 
         if (jumped && grounded &&jumpCount < jumpMax)
         {
-            //rb.sharedMaterial = nofriction;
-           // capsuleCollider.sharedMaterial = nofriction;
+            rb.sharedMaterial = nofriction;
+            capsuleCollider.sharedMaterial = nofriction;
+            gameObject.layer = 8;
             animator.SetBool("jump", true);
             if(jumpCount == 0)
             {
@@ -247,12 +270,10 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(dashtime <= 0 && gameObject.layer != 7)
-        {
-            gameObject.layer = 7;
-        }
-        
-        if(dashtime > 0)
+
+
+
+        if (dashtime > 0)
         {
             velocidadeFinal = new Vector2(front,0) * dashspeed * Time.fixedDeltaTime;
             dashtime -= Time.fixedDeltaTime;
@@ -265,15 +286,30 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (!inCollisionWithPlayer)
+            if (gameObject.layer == 6)
             {
-                velocidadeFinal = movementInput * speed * Time.fixedDeltaTime;
+                gameObject.layer = 7;
+
+            }
+
+            if (gameObject.layer == 10)
+            {
+                gameObject.layer = 8;
+
+            }
+
+
+            animator.SetBool("dashing", false);
+
+            //if (!inCollisionWithPlayer)
+            // {
+            velocidadeFinal = movementInput * speed * Time.fixedDeltaTime;
                 rb.velocity = new Vector2(velocidadeFinal.x, rb.velocity.y);
-            }
-            else
-            {
-                rb.AddForce(new Vector2(0, -1f) * 1, ForceMode2D.Impulse);
-            }
+            //}
+           // else
+           // {
+          //      rb.AddForce(new Vector2(0, -1f) * 1, ForceMode2D.Impulse);
+          //  }
 
 
         }
@@ -284,6 +320,17 @@ public class PlayerController : MonoBehaviour
         if(rb.velocity.y < -0.2)
         {
             animator.SetBool("falling", true);
+            if(gameObject.layer == 8)
+            {
+                Vector2 raypos = transform.position;
+                raypos.y -= capsuleCollider.size.y/2;
+                RaycastHit2D hit = Physics2D.Raycast(raypos, -Vector2.up,Mathf.Infinity,platformLayers);
+                if(hit.collider != null)
+                {
+                    print(hit.collider.gameObject.name);
+                    gameObject.layer = 7;
+                }
+            }
             
 
         }
@@ -314,10 +361,17 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            grounded = true;
-            animator.SetBool("jump", false);
-            animator.SetBool("falling", false);
-            jumpCount = 0;
+            if (collision.GetContact(0).normal.y > 0)
+            {
+                rb.sharedMaterial = basic;
+                capsuleCollider.sharedMaterial = basic;
+                grounded = true;
+                animator.SetBool("jump", false);
+                animator.SetBool("falling", false);
+                jumpCount = 0;
+                gameObject.layer = 7;
+
+            }
         }
 
        else if(collision.gameObject.CompareTag("Platform"))
@@ -331,9 +385,14 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("falling", false);
                 jumpCount = 0;
                 
+                
             }
 
-            
+                
+
+ 
+
+
         }
 
         else if(collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
@@ -353,6 +412,7 @@ public class PlayerController : MonoBehaviour
        
 
     }
+
 
 
 
@@ -377,7 +437,8 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position + hit1offset, hit1range);
-        Gizmos.DrawWireSphere(transform.position + hit2offset, hit2range);
+        Gizmos.DrawWireSphere(transform.position + hit1offset, hit1range);
+
     }
 
     public void registerDeathEvent(UnityAction<int> action)

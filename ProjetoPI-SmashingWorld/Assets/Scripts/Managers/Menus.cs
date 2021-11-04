@@ -10,10 +10,10 @@ public class Menus : MonoBehaviour
     GameObject MainMenu;
     [SerializeField]
     GameObject SettingsMenu;
-    [SerializeField]
-    AudioSource SFXManager;
-    [SerializeField]
-    AudioSource MusicManager;
+
+    GameObject SFXManager;
+
+    GameObject MusicManager;
     [SerializeField]
     Toggle FullScreenToggle;
     [SerializeField]
@@ -22,12 +22,36 @@ public class Menus : MonoBehaviour
     Slider SFXVolumeBar;
     [SerializeField]
     TMP_Dropdown ResolutionDropdown;
+    [SerializeField]
+    AudioClip MenuMusic;
+
+
+    //Prefabs
+    [SerializeField]
+    GameObject MusicManagerPrefab;
+    [SerializeField]
+    GameObject SFXManagerPrefab;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if (GameObject.FindGameObjectWithTag("SFXManager") == null)
+        {
+            SFXManager = Instantiate(SFXManagerPrefab);
+            MusicManager = Instantiate(MusicManagerPrefab);
+            DontDestroyOnLoad(SFXManager);
+            DontDestroyOnLoad(MusicManager);
+        }
+        else
+        {
+            SFXManager = GameObject.FindGameObjectWithTag("SFXManager");
+            MusicManager = GameObject.FindGameObjectWithTag("MusicManager");
+            MusicManager.GetComponent<AudioSource>().clip = MenuMusic;
+            MusicManager.GetComponent<AudioSource>().Play();
+        }
         //DontDestroyOnLoad(this.gameObject);
         SetFullScreen(Prefs.LoadFullScreen());
         FullScreenToggle.isOn = Prefs.LoadFullScreen();
@@ -41,6 +65,9 @@ public class Menus : MonoBehaviour
 
         SetMusicVolume(Prefs.LoadMusicVolume());
         MusicVolumeBar.value = Prefs.LoadMusicVolume();
+
+
+
 
     }
 
@@ -106,13 +133,13 @@ public class Menus : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
-        SFXManager.volume = volume;
+        SFXManager.GetComponent<AudioSource>().volume = volume;
         Prefs.SaveSFXVolume(volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        MusicManager.volume = volume;
+        MusicManager.GetComponent<AudioSource>().volume = volume;
         Prefs.SaveMusicVolume(volume);
     }
 }
