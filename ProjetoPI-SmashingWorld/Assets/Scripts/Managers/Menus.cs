@@ -24,6 +24,8 @@ public class Menus : MonoBehaviour
     TMP_Dropdown ResolutionDropdown;
     [SerializeField]
     AudioClip MenuMusic;
+    [SerializeField]
+    AudioClip ClickSound;
 
 
     //Prefabs
@@ -141,5 +143,10 @@ public class Menus : MonoBehaviour
     {
         MusicManager.GetComponent<AudioSource>().volume = volume;
         Prefs.SaveMusicVolume(volume);
+    }
+
+    public void PlayClickSound()
+    {
+        SFXManager.GetComponent<AudioSource>().PlayOneShot(ClickSound);
     }
 }

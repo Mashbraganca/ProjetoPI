@@ -97,6 +97,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
 
+    GameAudioManager audioManager;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -121,6 +124,8 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
 
+        audioManager = FindObjectOfType<GameAudioManager>();
+        
 
         inCollisionWithPlayer = false;
 
@@ -128,6 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit1(InputAction.CallbackContext context)
     {
+
        if(context.performed) 
         if (Time.time >= hitreload)
         {
@@ -142,7 +148,9 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamageHit1()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit1offset, hit1range, hitlayers);
+        audioManager.PlayHit1Sound();
+       // Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit1offset, hit1range, hitlayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCapsuleAll(transform.position + front * hit1offset, new Vector2(3,1),CapsuleDirection2D.Horizontal,0, hitlayers);
         foreach (Collider2D hit in hitEnemies)
         {
             if (hit.gameObject != this.gameObject)
@@ -171,6 +179,7 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamageHit2()
     {
+        audioManager.PlayHit2Sound();
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit2offset, hit2range, hitlayers);
         foreach (Collider2D hit in hitEnemies)
         {
@@ -185,6 +194,7 @@ public class PlayerController : MonoBehaviour
     {
         if (dashtime <= 0 && Time.time >= dashreload)
         {
+            audioManager.PlayDashSound();
             dashtime = dashduration;
             animator.SetBool("dashing", true);
             dashreload = Time.time + 1f / dashfrequency; 
@@ -224,6 +234,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumped && grounded &&jumpCount < jumpMax)
         {
+            audioManager.PlayJumpSound();
             rb.sharedMaterial = nofriction;
             capsuleCollider.sharedMaterial = nofriction;
             gameObject.layer = 8;
@@ -257,6 +268,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeHit(float damage)
     {
+        audioManager.PlayDamagesound();
         animator.Play("hit");
         hp -= damage;
         HUD.SetHPValue(hp);
@@ -449,5 +461,7 @@ public class PlayerController : MonoBehaviour
     {
         pauseEvent.AddListener(action);
     }
-}
+
+
+}   
 

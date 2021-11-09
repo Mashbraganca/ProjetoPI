@@ -97,6 +97,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(player==1)  GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 2 Wins";
         else GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 1 Wins";
+        
         ScenarioObjects.SetActive(false);
         GameOverMenu.SetActive(true);
         Destroy(p1);
@@ -105,7 +106,10 @@ public class PlayerManager : MonoBehaviour
          //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void PauseGame()
+
+
+
+public void PauseGame()
     {
         if(!paused)
         {
@@ -143,7 +147,7 @@ public class PlayerManager : MonoBehaviour
         controllerp1.HUD = GameObject.FindGameObjectWithTag("P1HUD").GetComponent<HUDBars>();
         controllerp1.playerid = 1;
         controllerp1.registerDeathEvent(FinishGame);
-        controllerp1.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+        controllerp1.registerPauseEvent(PauseGame);
         controllerp1.SpawnPoint = SpawnPointp1;
         p1.transform.position = SpawnPointp1.transform.position;
         p1.tag = "Player1";
@@ -155,7 +159,7 @@ public class PlayerManager : MonoBehaviour
         controllerp2.HUD = GameObject.FindGameObjectWithTag("P2HUD").GetComponent<HUDBars>();
         controllerp2.playerid = 2;
         controllerp2.registerDeathEvent(FinishGame);
-        controllerp2.GetComponent<PlayerController>().registerPauseEvent(PauseGame);
+        controllerp2.registerPauseEvent(PauseGame);
         controllerp2.SpawnPoint = SpawnPointp2;
         p2.transform.position = SpawnPointp2.transform.position;
         p2.tag = "Player2";

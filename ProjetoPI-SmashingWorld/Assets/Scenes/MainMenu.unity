@@ -906,7 +906,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 3636766161289585651, guid: 05d3a8407c1e25d45ba6a276af9ca892, type: 3}
     m_PressedSprite: {fileID: 8175740146885823837, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -924,6 +924,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2037016364}
         m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
         m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1044523395}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1218,7 +1230,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 275238765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044523395}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &275238765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2672,7 @@ MonoBehaviour:
   SFXVolumeBar: {fileID: 859320619}
   ResolutionDropdown: {fileID: 1767400426}
   MenuMusic: {fileID: 8300000, guid: f6d4d2c74966c9447a6d8fe3400710da, type: 3}
+  ClickSound: {fileID: 8300000, guid: 846622b580736ed4b9447d41be6227fa, type: 3}
   MusicManagerPrefab: {fileID: 5500719006579807627, guid: 491685881f52024478df16bc5e5e219a, type: 3}
   SFXManagerPrefab: {fileID: 7606701821738696829, guid: da021c4963be3434e8336026c5796837, type: 3}
 --- !u!4 &1044523396
@@ -3320,6 +3345,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1044523395}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1143888357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,6 +3727,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1044523395}
         m_TargetAssemblyTypeName: Menus, Assembly-CSharp
         m_MethodName: closeSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1044523395}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5426,6 +5475,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1044523395}
         m_TargetAssemblyTypeName: Menus, Assembly-CSharp
         m_MethodName: openSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1044523395}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

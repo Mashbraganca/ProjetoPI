@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Managers\Prefs.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\CameraAdjust.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameAudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
