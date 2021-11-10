@@ -257,6 +257,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                animator.SetBool("second_jump", true);
                 print(jump2force);
                 jumpCount += 1;
                 grounded = false;
@@ -390,6 +391,7 @@ public class PlayerController : MonoBehaviour
                 grounded = true;
                 animator.SetBool("jump", false);
                 animator.SetBool("falling", false);
+                animator.SetBool("second_jump", false);
                 jumpCount = 0;
                 gameObject.layer = 7;
 
@@ -405,6 +407,7 @@ public class PlayerController : MonoBehaviour
                 grounded = true;            
                 animator.SetBool("jump", false);
                 animator.SetBool("falling", false);
+                animator.SetBool("second_jump", false);
                 jumpCount = 0;
                 
                 
@@ -427,6 +430,7 @@ public class PlayerController : MonoBehaviour
                 grounded = true;
                 animator.SetBool("jump", false);
                 animator.SetBool("falling", false);
+                animator.SetBool("second_jump", false);
                 jumpCount = 0;
 
             }
