@@ -39,6 +39,7 @@ public class GameAudioManager : MonoBehaviour
         audioSource.time = 0.4f;
         audioSource.Play();
         
+        
     }
 
     public void PlayHit1Sound()
@@ -62,6 +63,18 @@ public class GameAudioManager : MonoBehaviour
     {
         
         audioSource.PlayOneShot(DashSound);
+    }
+
+    public void PlayDeathSound()
+    {
+
+
+        audioSource.gameObject.AddComponent<AudioEchoFilter>().delay= 300;
+        audioSource.gameObject.AddComponent<AudioReverbFilter>().reverbPreset = AudioReverbPreset.StoneCorridor;
+        
+        audioSource.clip = DamageSound;
+        audioSource.Play();
+        
     }
 
 

@@ -906,7 +906,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 3636766161289585651, guid: 05d3a8407c1e25d45ba6a276af9ca892, type: 3}
+    m_HighlightedSprite: {fileID: 7781458051854872533, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     m_PressedSprite: {fileID: 8175740146885823837, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7781458051854872533, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     m_PressedSprite: {fileID: 8175740146885823837, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -3318,7 +3318,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7781458051854872533, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     m_PressedSprite: {fileID: 8175740146885823837, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -3709,7 +3709,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     m_PressedSprite: {fileID: -7632656198709925148, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -5457,7 +5457,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7781458051854872533, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     m_PressedSprite: {fileID: 8175740146885823837, guid: 4e0f732312a6d024bb0157c23ffab372, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}

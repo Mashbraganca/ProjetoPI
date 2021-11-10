@@ -95,21 +95,34 @@ public class PlayerManager : MonoBehaviour
         //Settings P1 control
     public void FinishGame(int player)
     {
-        if(player==1)  GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 2 Wins";
-        else GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 1 Wins";
+        p1.GetComponent<PlayerInput>().DeactivateInput();
+        p2.GetComponent<PlayerInput>().DeactivateInput();
+        StartCoroutine(WaitToFinish(player));
+        /*
         
+        */
+         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator WaitToFinish(int player)
+    {     
+        yield return new WaitForSeconds(3);
+
+        if (player == 1) GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 2 Wins";
+        else GameOverMenuText.GetComponent<TextMeshProUGUI>().text = "Player 1 Wins";
+        Destroy(GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioEchoFilter>());
+        Destroy(GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioReverbFilter>());
+
         ScenarioObjects.SetActive(false);
+        mainHUD.SetActive(false);
         GameOverMenu.SetActive(true);
         Destroy(p1);
         Destroy(p2);
-
-         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
 
-
-public void PauseGame()
+    public void PauseGame()
     {
         if(!paused)
         {

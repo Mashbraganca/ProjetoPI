@@ -2,13 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraAdjust
+    - GameAudioManager
     - HUDBars
     - Menus
     - PlayerController
     - PlayerManager
     - Scenes
     Sirenix.OdinInspector.Editor.dll:
-    - Sirenix.OdinInspector.Editor.GeneralDrawerConfig
     - Sirenix.OdinInspector.Editor.ImportSettingsConfig
     - Sirenix.OdinInspector.Editor.InspectorConfig
     - Sirenix.Serialization.AOTGenerationConfig
@@ -47,6 +47,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -86,6 +94,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -123,14 +133,14 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4240}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 5546}
+      Script: {instanceID: 4916}
     - Class: 114
-      Script: {instanceID: 5580}
+      Script: {instanceID: 5550}
+    - Class: 114
+      Script: {instanceID: 5584}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -178,8 +188,6 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 0}
-    - Class: 114
       Script: {instanceID: 1482}
     - Class: 114
       Script: {instanceID: 1672}
@@ -214,17 +222,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4324}
     - Class: 114
-      Script: {instanceID: 4418}
+      Script: {instanceID: 4420}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 4668}
+      Script: {instanceID: 4670}
     - Class: 114
-      Script: {instanceID: 4776}
+      Script: {instanceID: 4778}
     - Class: 114
-      Script: {instanceID: 5130}
-    - Class: 114
-      Script: {instanceID: 17650}
+      Script: {instanceID: 5134}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -334,7 +340,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: e6f20d13725357567f26c5b6b3a4febf
+      Hash: 9b43b67445cd80dda732bc5e1c35faca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -460,7 +466,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: f3f5db518e1071e770ab31af21f9025f
+      Hash: 86904921f619cf9e84bb4bb3ffbfb6b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menus
@@ -712,7 +718,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: b184affabf3442c1290fa2007fd8f910
+      Hash: f36dbd4b497592e3a9e05a8fdfaa9359
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerManager
@@ -862,6 +868,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Prefs
+  - hash:
+      serializedVersion: 2
       Hash: cd0ecdca0166232906c6f2df9dddc3d3
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
@@ -980,6 +992,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: 59dbee6078e3d7261c6cdb6715f2d49f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameAudioManager
   - hash:
       serializedVersion: 2
       Hash: c1f5356fcd27668ddc25078e27f9828d
@@ -1118,12 +1136,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: Sirenix.OdinInspector.Demos
     className: SelfAndChildrenExample
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Prefs
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

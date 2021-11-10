@@ -24266,6 +24266,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
+    - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -24486,6 +24490,10 @@ PrefabInstance:
       value: RestartButton
       objectReference: {fileID: 0}
     - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
+    - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -24701,6 +24709,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -24951,6 +24963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyboardButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -26067,6 +26083,10 @@ PrefabInstance:
       value: 4294901759
       objectReference: {fileID: 0}
     - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
+    - target: {fileID: 4935824804500484901, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -26258,6 +26278,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 6160376141588944250, guid: aa523161a82f6324ba1de9f3864c1e0b, type: 3}
     - target: {fileID: 4935824805720759898, guid: 3326e1ae11eb411419a9ed75d6b1a58c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

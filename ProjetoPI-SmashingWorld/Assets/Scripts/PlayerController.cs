@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerInputActions = new PlayerControls();
         playerInputActions.Player.Enable();
+        
 
         HUD.SetHPMaxValue(maxhp);
         HUD.SetMPMaxValue(maxmp);
@@ -143,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-
+        
     }
 
     public void ApplyDamageHit1()
@@ -167,12 +168,20 @@ public class PlayerController : MonoBehaviour
     {
 
         if (context.performed)
-            if (Time.time >= hitreload && mp >= hit2MPcost)
+            if (Time.time >= hitreload )
             {
-                animator.Play("stronghit");
-                hitreload = Time.time + 1f / hitfrequency;
-                mp -= hit2MPcost;
-                HUD.SetMPValue(mp);
+                if(mp >= hit2MPcost)
+                {
+                    animator.Play("stronghit");
+                    hitreload = Time.time + 1f / hitfrequency;
+                    mp -= hit2MPcost;
+                    HUD.SetMPValue(mp);
+                }
+                else
+                {
+                    animator.Play("stronghitnomana");
+                    hitreload = Time.time + 1f / hitfrequency;
+                }
 
             }
     }
@@ -276,14 +285,15 @@ public class PlayerController : MonoBehaviour
     }
     private void Death()
     {
-        
+        animator.Play("death");
+        audioManager.PlayDeathSound();
         deathEvent.Invoke(playerid);
-      
+
     }
     void FixedUpdate()
     {
 
-
+       
 
         if (dashtime > 0)
         {
