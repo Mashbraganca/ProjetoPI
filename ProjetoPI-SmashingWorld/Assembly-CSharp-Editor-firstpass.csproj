@@ -285,23 +285,11 @@
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
  <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
- </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
- </Reference>
- <Reference Include="log4netPlastic">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
@@ -312,8 +300,8 @@
  <Reference Include="Sirenix.Serialization">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
- <Reference Include="unityplastic">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <Reference Include="Sirenix.Utilities.Editor">
+ <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -725,9 +713,6 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/enrol/Desktop/SW/ProjetoPI/ProjetoPI-SmashingWorld/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>

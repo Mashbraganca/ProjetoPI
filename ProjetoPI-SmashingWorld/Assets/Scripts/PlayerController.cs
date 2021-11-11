@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     private float hit2range = 3f;
     private float hit2damage = 25;
     private float hit2MPcost = 40;
+    [SerializeField]
+    GameObject PowerBallPrefab;
 
     //Fall Damage
     private float falldamage = 10;
@@ -172,6 +174,7 @@ public class PlayerController : MonoBehaviour
             {
                 if(mp >= hit2MPcost)
                 {
+                    transform.GetChild(0).gameObject.SetActive(true);
                     animator.Play("stronghit");
                     hitreload = Time.time + 1f / hitfrequency;
                     mp -= hit2MPcost;
@@ -188,15 +191,13 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamageHit2()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         audioManager.PlayHit2Sound();
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + front * hit2offset, hit2range, hitlayers);
-        foreach (Collider2D hit in hitEnemies)
-        {
-            if (hit.gameObject != this.gameObject)
-            {
-                hit.gameObject.GetComponent<PlayerController>().TakeHit(hit2damage);
-            }
-        }
+        PowerBall pb = Instantiate(PowerBallPrefab, transform.position + front * hit1offset, Quaternion.identity).GetComponent<PowerBall>();
+        pb.direction = front;
+        pb.creator_tag = tag;
+        pb.damage = hit2damage;
+        
     }
 
     public void OnDash(InputAction.CallbackContext context)
