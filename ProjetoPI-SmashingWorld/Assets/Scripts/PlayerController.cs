@@ -236,6 +236,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator Flash(float time, float intervalTime)
+    {
+        //this counts up time until the float set in FlashingTime
+        float elapsedTime = 0f;
+        Renderer r = GetComponent<SpriteRenderer>();
+        //This repeats our coroutine until the FlashingTime is elapsed
+        while (elapsedTime < time)
+        {
+
+            r.enabled = false;
+            //then add time to elapsedtime
+            elapsedTime += Time.deltaTime;
+            //then wait for the Timeinterval set
+            yield return new WaitForSeconds(intervalTime);
+            //then turn them all back on
+            r.enabled = true;
+
+            elapsedTime += Time.deltaTime;
+            print(elapsedTime);
+            //then wait for another interval of time
+            yield return new WaitForSeconds(intervalTime);
+        }
+    }
+
     public void OnJump(InputAction.CallbackContext context)
     {
 
@@ -281,6 +305,7 @@ public class PlayerController : MonoBehaviour
     {
         audioManager.PlayDamagesound();
         animator.Play("hit");
+        StartCoroutine(Flash(0.015f, 0.1f));
         hp -= damage;
         HUD.SetHPValue(hp);
         if (hp <= 0) Death();

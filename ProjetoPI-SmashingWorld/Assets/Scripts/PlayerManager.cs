@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     
     PlayerInputManager manager;
-    bool dualcontroller = false;
+    int control_options;
     [SerializeField]
     GameObject controllerCanvas;
     GameObject prefabp1,prefabp2;
@@ -51,7 +51,18 @@ public class PlayerManager : MonoBehaviour
 
     public void SetDualController()
     {
-        dualcontroller = true;
+        control_options = 3;
+        gameObject.SetActive(true);
+        controllerCanvas.SetActive(false);
+        mainHUD.SetActive(true);
+        ScenarioObjects.SetActive(true);
+        SpawnPlayers();
+
+    }
+
+    public void SetSameKeyboard()
+    {
+        control_options = 1;
         gameObject.SetActive(true);
         controllerCanvas.SetActive(false);
         mainHUD.SetActive(true);
@@ -62,7 +73,7 @@ public class PlayerManager : MonoBehaviour
 
     public void SetKeyboardController()
     {
-        dualcontroller = false;
+        control_options = 2;
         gameObject.SetActive(true);
         controllerCanvas.SetActive(false);
         mainHUD.SetActive(true);
@@ -73,20 +84,29 @@ public class PlayerManager : MonoBehaviour
 
     private void SpawnPlayers()
     {
-        if (dualcontroller)
-        {
-            p1 = manager.JoinPlayer(0, 0, "Controller").gameObject;
-            SetupP1();
-        }
-        else
-        {
-            p1 = manager.JoinPlayer(0, 0, "Keyboard").gameObject;
-            SetupP1();
-        }
 
-        //Spawning P2 - always joystick
-        p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
-        SetupP2();
+        switch (control_options)
+        {
+            case 1:
+                p1 = manager.JoinPlayer(0, 0, "Keyboard", Keyboard.current).gameObject;
+                SetupP1();
+                p2 = manager.JoinPlayer(1, 0, "Keyboard_2",Keyboard.current).gameObject;
+                SetupP2();
+                break;
+            case 2:
+                p1 = manager.JoinPlayer(0, 0, "Keyboard").gameObject;
+                SetupP1();
+                
+                p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
+                SetupP2();
+                break;
+            case 3:
+                p1 = manager.JoinPlayer(0, 0, "Controller").gameObject;
+                SetupP1();
+                p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
+                SetupP2();
+                break;
+        }
 
         cameraAdjust.SetupCamera();
     }

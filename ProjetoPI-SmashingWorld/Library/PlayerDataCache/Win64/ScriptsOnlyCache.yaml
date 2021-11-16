@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Menus
     - PlayerController
     - PlayerManager
+    - PowerBall
     - Scenes
     Sirenix.OdinInspector.Editor.dll:
     - Sirenix.OdinInspector.Editor.ImportSettingsConfig
@@ -86,6 +87,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
     - Class: 70
@@ -125,21 +128,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 3404}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3758}
+      Script: {instanceID: 3406}
     - Class: 114
-      Script: {instanceID: 3790}
+      Script: {instanceID: 3760}
     - Class: 114
-      Script: {instanceID: 4240}
+      Script: {instanceID: 3792}
     - Class: 114
-      Script: {instanceID: 4604}
+      Script: {instanceID: 4242}
     - Class: 114
-      Script: {instanceID: 4916}
+      Script: {instanceID: 4606}
     - Class: 114
-      Script: {instanceID: 5550}
+      Script: {instanceID: 4918}
     - Class: 114
-      Script: {instanceID: 5584}
+      Script: {instanceID: 5552}
+    - Class: 114
+      Script: {instanceID: 5586}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -210,27 +215,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3404}
+      Script: {instanceID: 3406}
     - Class: 114
-      Script: {instanceID: 3614}
+      Script: {instanceID: 3616}
     - Class: 114
-      Script: {instanceID: 3758}
+      Script: {instanceID: 3760}
     - Class: 114
-      Script: {instanceID: 4240}
+      Script: {instanceID: 4242}
     - Class: 114
-      Script: {instanceID: 4324}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4420}
+      Script: {instanceID: 4422}
     - Class: 114
-      Script: {instanceID: 4604}
+      Script: {instanceID: 4606}
     - Class: 114
-      Script: {instanceID: 4670}
+      Script: {instanceID: 4672}
     - Class: 114
-      Script: {instanceID: 4778}
+      Script: {instanceID: 4780}
     - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 5136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -340,7 +345,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 9b43b67445cd80dda732bc5e1c35faca
+      Hash: 982ba6f4a1ca64235f89439f6a1a61a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -530,6 +535,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: Sirenix.OdinInspector.Demos
     className: BasicAttributeProcessorExample
+  - hash:
+      serializedVersion: 2
+      Hash: 8e49216143f9b10f58bcc01a3627fe00
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerBall
   - hash:
       serializedVersion: 2
       Hash: b3e3ac128e559c861227825a5faee853
