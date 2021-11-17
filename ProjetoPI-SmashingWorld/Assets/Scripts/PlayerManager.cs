@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     int control_options;
     [SerializeField]
     GameObject controllerCanvas;
+    [SerializeField]
     GameObject prefabp1,prefabp2;
     [SerializeField]
     GameObject mainHUD;
@@ -88,21 +89,26 @@ public class PlayerManager : MonoBehaviour
         switch (control_options)
         {
             case 1:
+                manager.playerPrefab = prefabp1;
                 p1 = manager.JoinPlayer(0, 0, "Keyboard", Keyboard.current).gameObject;
                 SetupP1();
+                manager.playerPrefab = prefabp2;
                 p2 = manager.JoinPlayer(1, 0, "Keyboard_2",Keyboard.current).gameObject;
                 SetupP2();
                 break;
             case 2:
+                manager.playerPrefab = prefabp1;
                 p1 = manager.JoinPlayer(0, 0, "Keyboard").gameObject;
                 SetupP1();
-                
+                manager.playerPrefab = prefabp2;
                 p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
                 SetupP2();
                 break;
             case 3:
+                manager.playerPrefab = prefabp1;
                 p1 = manager.JoinPlayer(0, 0, "Controller").gameObject;
                 SetupP1();
+                manager.playerPrefab = prefabp2;
                 p2 = manager.JoinPlayer(1, 0, "Controller").gameObject;
                 SetupP2();
                 break;

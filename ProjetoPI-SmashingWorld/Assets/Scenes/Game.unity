@@ -24049,7 +24049,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6391456932003090549, guid: dfe25340239f57940a311187cf18bae3, type: 3}
+  m_PlayerPrefab: {fileID: 0}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -24086,6 +24086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCanvas: {fileID: 1010680638}
+  prefabp1: {fileID: 6391456932003090549, guid: dfe25340239f57940a311187cf18bae3, type: 3}
+  prefabp2: {fileID: 9196595865022083301, guid: 57c350ca119e15c4aafa6ed737ac0c17, type: 3}
   mainHUD: {fileID: 341562787}
   ScenarioObjects: {fileID: 283003523}
   PauseMenu: {fileID: 766775566}
